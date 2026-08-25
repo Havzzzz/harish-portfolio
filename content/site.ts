@@ -1,9 +1,10 @@
-export type Domain = "data-ai" | "automation" | "product";
+export type Domain = "data-ai" | "automation" | "product" | "engineering";
 
 export const DOMAIN_LABELS: Record<Domain, string> = {
   "data-ai": "Data & AI",
   automation: "Automation",
   product: "Product Analytics",
+  engineering: "Engineering",
 };
 
 export type Hue = "cyan" | "magenta" | "violet";
@@ -13,6 +14,7 @@ export const DOMAIN_HUE: Record<Domain, Hue> = {
   "data-ai": "magenta",
   automation: "cyan",
   product: "violet",
+  engineering: "cyan",
 };
 
 export const personal = {
@@ -140,6 +142,27 @@ export const projects: Project[] = [
     stack: ["SQL", "BigQuery", "Funnel Analysis", "Python"],
   },
   {
+    title: "BCRS Regulatory Integration",
+    problem:
+      "Singapore's national Beverage Container Return Scheme had a statutory launch date, and the deposit mechanics had to work inside a retail and ecommerce platform that already existed.",
+    built:
+      "A full map of the microservices and API calls the integration would touch, so delivery teams could see exactly where new scheme behaviour met existing platform behaviour before anything was committed to a sprint.",
+    result:
+      "Integration points and dependencies understood up front, against a deadline set by regulation rather than by us.",
+    domains: ["engineering", "product"],
+    stack: ["Microservices", "REST APIs", "Systems Integration", "Solution Design"],
+  },
+  {
+    title: "Personal Builds: Full-Stack & LLM",
+    problem:
+      "Production work sets the stack. Side projects are where I get to pick it, and where new tools get tried before they are anywhere near something that matters.",
+    built:
+      "Full-stack applications shipped through NTU project work on Python, FastAPI, React, Node.js and MongoDB, plus personal AI and LLM builds including RAG systems and self-hosted inference with Ollama and vLLM.",
+    result: "A working habit of building end to end, with another project in progress.",
+    domains: ["engineering", "data-ai"],
+    stack: ["Python", "FastAPI", "React", "Node.js", "RAG", "Ollama"],
+  },
+  {
     title: "RPA & GenAI Impact Program",
     problem:
       "Automation and chatbot initiatives were shipping without a framework to prove they moved customer experience metrics.",
@@ -170,6 +193,7 @@ export const experience: Role[] = [
       "Led end-to-end customer service analytics projects and daily Voice of Customer analysis for cross-functional stakeholders.",
       "Built the NLP ticket classification pipeline and automated response system featured above, and managed the Zendesk platform for 100+ agents.",
       "Worked with Product Managers in Agile Kanban as UAT lead, translating 100+ agent insights into data-backed feature briefs, user stories and BRDs.",
+      "Acted as point of contact for external stakeholders on project delivery, and mapped the microservices and API call flow for the BCRS regulatory integration.",
     ],
   },
   {
@@ -226,22 +250,47 @@ export const skillGroups: SkillGroup[] = [
       "BERT Models (BERTopic, Transformers)",
       "NLP Text Classification",
       "Feature Engineering",
-      "LLM Prompt Engineering",
       "Real-time Data Processing",
+      "Data Pipelines & ETL",
     ],
   },
   {
-    label: "Automation & Engineering",
+    label: "AI & LLM Engineering",
+    items: [
+      "Google Vertex AI",
+      "Google Gemini",
+      "LLM Prompt Engineering",
+      "RAG Systems",
+      "LangChain",
+      "LlamaIndex",
+      "Model Context Protocol (MCP)",
+      "Ollama, vLLM, LM Studio (self-hosted inference)",
+    ],
+  },
+  {
+    label: "Software & Full-Stack",
+    items: [
+      "Python, FastAPI",
+      "React, Node.js",
+      "TypeScript, JavaScript",
+      "Java, Spring Boot",
+      "MongoDB",
+      "REST APIs, OpenAPI",
+      "Webhook Integrations",
+    ],
+  },
+  {
+    label: "Automation & Platform",
     items: [
       "Google Apps Script",
       "Zendesk API",
       "UiPath RPA",
       "Workflow Design",
+      "Apigee (API Gateway)",
+      "Docker",
       "Git",
       "CI/CD Pipelines",
       "Terraform",
-      "JavaScript",
-      "Java",
     ],
   },
   {
