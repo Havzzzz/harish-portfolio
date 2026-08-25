@@ -21,8 +21,7 @@ export const personal = {
   location: "Singapore",
   email: "harishprabhu51@gmail.com",
   linkedin: "https://www.linkedin.com/in/harishprabhup",
-  // TODO: replace with real GitHub profile URL when Harish provides it
-  github: "https://github.com",
+  github: "https://github.com/havzzzz",
   resumePath: "/resume.pdf",
   eyebrow: "Singapore · Data & AI · Automation",
   thesis: "I turn messy operations into automated, measurable systems.",
@@ -253,7 +252,7 @@ export const skillGroups: SkillGroup[] = [
       "Backlog Management",
       "UAT Planning & Execution",
       "JIRA",
-      "Azure DevOps",
+      "Confluence",
       "API Testing (Postman)",
     ],
   },
@@ -268,7 +267,7 @@ export const certifications = [
   "Data Science Math Skills · Duke",
   "Behavioral Finance · Duke",
   "Basic Aerospace Knowledge · Jeppesen",
-  "Technical Support Fundamentals · Google",
+  "Google IT Support Professional Certificate",
   "Digital Marketing & Ecommerce · Google",
 ];
 
