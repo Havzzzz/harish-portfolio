@@ -23,7 +23,7 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Harish Prabhu · Data, AI & Automation",
+  title: "Harish Prabhu · Solutions & Delivery Engineer",
   description: personal.thesis,
   openGraph: {
     title: "Harish Prabhu",
@@ -40,7 +40,14 @@ const jsonLd = {
   url: personal.linkedin,
   address: { "@type": "PostalAddress", addressLocality: "Singapore" },
   alumniOf: "Nanyang Technological University",
-  knowsAbout: ["Data Analytics", "Machine Learning", "NLP", "Automation", "RPA"],
+  knowsAbout: [
+    "Solutions Engineering",
+    "Technical Delivery",
+    "Systems Integration",
+    "Workflow Automation",
+    "Vendor Management",
+    "Data Analytics",
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

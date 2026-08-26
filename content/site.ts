@@ -33,19 +33,19 @@ export const personal = {
 
 export const about = {
   paragraphs: [
-    "I am a Data Science & Artificial Intelligence undergraduate at NTU on a work-study degree, and since 2020 I have worked inside operations most analysts only ever see through a dashboard: a national emergency hotline, the cage floor of Marina Bay Sands, and the customer service engine room of FairPrice Group.",
-    "That path shaped how I work. At Tele-Centre I handled 10,000+ emergency calls at 98% accuracy and ranked first in performance. At Marina Bay Sands I processed S$500,000+ a day in a GRA-regulated environment where 100% reconciliation was the only acceptable number. At FairPrice Group I became the primary analytics resource across four business units, building NLP pipelines, automated workflows and dashboards that cut manual triage by 40% and lifted first reply SLA from 75% to 98%.",
+    "I am an Artificial Intelligence undergraduate at NTU on a work-study degree, and since 2020 I have worked inside operations most analysts only ever see through a dashboard: a national emergency hotline, the cage floor of Marina Bay Sands, and the customer service engine room of FairPrice Group.",
+    "That path shaped how I work. At Tele-Centre I handled 10,000+ emergency calls at 98% accuracy and ranked first in performance. At Marina Bay Sands I reconciled S$500,000+ a day in a GRA-regulated environment where the controls were not negotiable. At FairPrice Group I became the primary analytics resource across all four business units, and the customer service side's point of contact for four external vendors, shipping the automations and dashboards that cut manual triage by 40% and took first reply SLA from 75% to 98%.",
     "The pattern in everything I build: find where an operation leaks time or accuracy, automate the fix, and put a number on the result. I am now aiming at solutions engineering and forward-deployed roles, where that same pattern runs inside a customer's operation instead of my own.",
   ],
   facts: [
     { label: "Base", value: "Singapore" },
     {
       label: "Education",
-      value: "BTech in Computing (Data Science & AI), NTU, 2025 - 2029",
+      value: "BTech in Computing (Artificial Intelligence), NTU, 2025 - 2029",
     },
     { label: "Focus", value: "Data & AI · Automation · Product Analytics" },
     { label: "Toolkit core", value: "Python · SQL · BigQuery · BERT · UiPath" },
-    { label: "Certifications", value: "10, from Google, IBM, Coursera, Duke, NTU and Jeppesen" },
+    { label: "Certifications", value: "10, from Google, Microsoft, IBM, Duke, NTU and Jeppesen" },
     {
       label: "Availability",
       value:
@@ -108,14 +108,15 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "NLP Ticket Intelligence Pipeline",
+    title: "Ticket Classification, Shipped Under Constraint",
     problem:
-      "50,000+ monthly customer interactions were being categorized and routed by hand, slowly and inconsistently.",
+      "A migration to Salesforce broke the sidebar apps agents used to check customer accounts, and only a handful had Salesforce access. The backlog that built up over three months was too large to categorise by hand, across 50,000+ monthly interactions.",
     built:
-      "An NLP classification pipeline using BERT models (BERTopic, transformer embeddings) feeding BigQuery for real-time categorization and automated routing.",
-    result: "40% reduction in manual triage across the service floor.",
+      "Three stages. BERTopic and BERT topic analysis over historical ticket data in BigQuery to find the real category structure. A rule-based classification engine in Python encoding the rules that analysis produced, with checking constraints drawn from past tickets. Then a JavaScript port running on Google Apps Script, because that was what the environment permitted and I had no VS Code access. It categorises incoming tickets into a sheet the Link team works from.",
+    result:
+      "Manual triage down 40%. The sophisticated approach told me what the rules were; the rules are what shipped.",
     domains: ["data-ai", "automation"],
-    stack: ["BERTopic", "Transformers", "Python", "BigQuery"],
+    stack: ["BERTopic", "Python", "JavaScript", "Google Apps Script", "BigQuery"],
   },
   {
     title: "Automated Response System",
@@ -132,10 +133,10 @@ export const projects: Project[] = [
     problem:
       "Four business units had no shared, self-serve view of CSAT, SLA compliance, contact rate or resolution trends.",
     built:
-      "A dashboard suite on BigQuery, Tableau and Zendesk Explore, designed and deployed as the single source of customer experience truth for cross-functional stakeholders.",
+      "A dashboard suite built in Google Looker Studio on BigQuery data, plus Zendesk Explore, designed and deployed as the single source of customer experience truth for cross-functional stakeholders.",
     result: "Adopted across business units as self-serve analytics reporting.",
     domains: ["data-ai", "product"],
-    stack: ["BigQuery", "Tableau", "Zendesk Explore", "SQL"],
+    stack: ["BigQuery", "Looker Studio", "Zendesk Explore", "SQL"],
   },
   {
     title: "Customer Journey Diagnostics",
@@ -160,26 +161,25 @@ export const projects: Project[] = [
     stack: ["Microservices", "REST APIs", "Systems Integration", "Solution Design"],
   },
   {
-    title: "HawkerHero: Hawker Centre Discovery PWA",
+    title: "MakanOS: Hawker Centre Discovery Platform",
     problem:
-      "Singapore's hawker centre data is split across three separate government sources (NEA locations, NEA hygiene grades, IMDA Wireless@SG hotspots) with no shared interface to search, filter or review against. Built with a 4-person team for NTU's CT2004 Object-Oriented Programming module.",
+      "Singapore's hawker centre data sits across separate government sources with no shared interface to search or filter against. A five-person team project for an NTU software engineering module.",
     built:
-      "As backend lead: a FastAPI service that aggregates and caches the NEA and IMDA datasets and serves them to a Svelte PWA frontend with GPS proximity search, hygiene/Wi-Fi filtering and Firebase-authenticated reviews.",
+      "I owned the backend and data layer: a FastAPI REST API on PostgreSQL with PostGIS for geospatial queries, an ETL pipeline ingesting data.gov.sg open data with idempotent upserts and chunked batch loading, Alembic schema migrations and JWT authentication. I also authored the ERD, data dictionary and architecture diagrams the team built against. The frontend was my teammates' work.",
     result:
-      "A working full-stack PWA integrating three live government data sources behind one map-based interface.",
+      "A working full-stack platform serving public datasets behind one geospatial interface.",
     domains: ["engineering", "data-ai"],
-    stack: ["FastAPI", "Python", "Svelte", "Firebase Auth", "NEA/IMDA APIs"],
-    repo: "https://github.com/dgmw15/MakanOS",
+    stack: ["FastAPI", "PostgreSQL/PostGIS", "SQLAlchemy", "Alembic", "JWT Auth", "Python"],
   },
   {
-    title: "Personal Builds: Full-Stack & LLM",
+    title: "This Site, and What Else Gets Built",
     problem:
-      "Production work sets the stack. Side projects are where I get to pick it, and where new tools get tried before they are anywhere near something that matters.",
+      "Production work sets the stack. Personal projects are where I pick it, and where a tool gets tried before it goes anywhere that matters.",
     built:
-      "Full-stack applications shipped through NTU project work on Python, FastAPI, React, Node.js and MongoDB, plus personal AI and LLM builds including RAG systems and self-hosted inference with Ollama and vLLM.",
-    result: "A working habit of building end to end, with another project in progress.",
+      "This site, designed and deployed myself on Next.js, React and TypeScript. Alongside it, full-stack project work at NTU on Python, FastAPI and React, and running models locally with Ollama to understand what self-hosted inference actually costs.",
+    result: "A habit of building end to end, with another project in progress.",
     domains: ["engineering", "data-ai"],
-    stack: ["Python", "FastAPI", "React", "Node.js", "RAG", "Ollama"],
+    stack: ["Next.js", "React", "TypeScript", "Python", "FastAPI", "Ollama"],
   },
   {
     title: "RPA & GenAI Impact Program",
@@ -209,10 +209,10 @@ export const experience: Role[] = [
     summary:
       "Primary analytics resource across all FairPrice Group business units: retail stores, ecommerce, food services and Link.",
     bullets: [
-      "Led end-to-end customer service analytics projects and daily Voice of Customer analysis for cross-functional stakeholders.",
-      "Built the NLP ticket classification pipeline and automated response system featured above, and managed the Zendesk platform for 100+ agents.",
-      "Worked with Product Managers in Agile Kanban as UAT lead, translating 100+ agent insights into data-backed feature briefs, user stories and BRDs.",
-      "Acted as point of contact for external stakeholders on project delivery, and mapped the microservices and API call flow for the BCRS regulatory integration.",
+      "Project-In-Charge across all four business units, framing problems with the business and translating them into specifications, user stories and acceptance criteria.",
+      "Single point of contact for four external delivery partners on separate programmes: Viseo on the Salesforce Einstein chatbot, Deloitte, Nautilus on IVR telephony, and a remote developer. Led the IVR decision-tree redesign end to end with Nautilus, from decision through build to presenting the outcome.",
+      "On the BCRS regulatory rollout: mapped the microservices and API call flow, led the customer service build on Zendesk with the RPA team, ran system integration testing, led UAT, and was one of three sign-offs on the go decision, signing for the customer service side.",
+      "Built the classification engine and automated reply systems featured above, administered Zendesk for 100+ agents, and presented Voice of Customer daily through the Chinese New Year peak, to around 50 attendees.",
     ],
   },
   {
@@ -222,9 +222,18 @@ export const experience: Role[] = [
     summary:
       "High-value financial operations in a GRA-regulated environment.",
     bullets: [
-      "Processed S$500,000+ daily in multi-currency transactions with 100% reconciliation accuracy.",
+      "Reconciled S$500,000+ daily in multi-currency transactions under GRA-regulated cage controls.",
       "Performed fraud detection, AML/PMLTF compliance monitoring and customer due diligence under GRA licensing.",
       "Troubleshot system discrepancies and balanced transactions against computerized casino systems under strict security protocols.",
+    ],
+  },
+  {
+    company: "Singapore Army",
+    title: "Full-Time National Serviceman (NSF)",
+    dates: "Sep 2022 - Sep 2024",
+    summary: "Operational security duties, as guardroom second-in-command.",
+    bullets: [
+      "Supervised a team of 7 to 8 personnel on operational security duties.",
     ],
   },
   {
@@ -242,7 +251,7 @@ export const experience: Role[] = [
 
 export const education = {
   degree: "BTech in Computing (Work-Study Degree)",
-  specialization: "Data Science & Artificial Intelligence",
+  specialization: "Artificial Intelligence",
   institution: "Nanyang Technological University, Singapore",
   dates: "2025 - 2029",
 };
@@ -256,11 +265,10 @@ export const skillGroups: SkillGroup[] = [
       "Google Vertex AI",
       "Google Gemini",
       "LLM Prompt Engineering",
-      "RAG Systems",
       "LangChain",
       "LlamaIndex",
       "Model Context Protocol (MCP)",
-      "Ollama, vLLM, LM Studio (self-hosted inference)",
+      "Ollama (local inference)",
     ],
   },
   {
@@ -271,19 +279,15 @@ export const skillGroups: SkillGroup[] = [
       "UiPath RPA",
       "Workflow Design",
       "Apigee (API Gateway)",
-      "Docker",
       "Git",
-      "CI/CD Pipelines",
-      "Terraform",
+      "SAP (basic working knowledge)",
     ],
   },
   {
-    label: "ML & NLP",
+    label: "NLP & Text Classification",
     items: [
-      "BERT Models (BERTopic, Transformers)",
-      "NLP Text Classification",
-      "Feature Engineering",
-      "Real-time Data Processing",
+      "BERTopic topic modelling over real ticket data",
+      "Rule-based classification engine design",
       "Data Pipelines & ETL",
     ],
   },
@@ -291,10 +295,10 @@ export const skillGroups: SkillGroup[] = [
     label: "Software & Full-Stack",
     items: [
       "Python, FastAPI",
-      "React, Node.js",
+      "React, Next.js",
       "TypeScript, JavaScript",
       "Java (NTU project work)",
-      "MongoDB",
+      "PostgreSQL, SQL Server",
       "REST APIs, OpenAPI",
       "Webhook Integrations",
     ],
@@ -305,8 +309,7 @@ export const skillGroups: SkillGroup[] = [
       "SQL",
       "BigQuery",
       "Python (Pandas, NumPy, scikit-learn)",
-      "Tableau",
-      "Power BI",
+      "Looker Studio",
       "A/B Testing",
       "Funnel Analysis",
       "KPI Dashboard Design",
@@ -318,7 +321,8 @@ export const skillGroups: SkillGroup[] = [
       "Agile Kanban",
       "User Stories & Acceptance Criteria",
       "Backlog Management",
-      "UAT Planning & Execution",
+      "SIT, UAT & Release Sign-Off",
+      "Vendor & External Partner Management",
       "JIRA",
       "Confluence",
       "API Testing (Postman)",
@@ -331,7 +335,7 @@ export const certifications = [
   "Large Language Models · Google Cloud",
   "Data Science Methodology · IBM",
   "Certified Full Stack Developer · NTU",
-  "Azure Cloud Services · Coursera",
+  "Azure Cloud Services · Microsoft",
   "Data Science Math Skills · Duke",
   "Behavioral Finance · Duke",
   "Basic Aerospace Knowledge · Jeppesen",
