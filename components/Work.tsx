@@ -32,6 +32,9 @@ export default function Work() {
     <section id="work" className="relative mx-auto max-w-6xl px-6 pt-24 sm:pt-32">
       <div className="glow-magenta right-[-140px] top-[80px] h-[360px] w-[360px]" />
       <SectionHeader eyebrow="Selected work" title="Built, shipped, measured." />
+      <p className="-mt-8 mb-10 max-w-2xl font-mono text-xs text-faint">
+        Most FairPrice work is internal and not publicly linkable; links appear below where a public artifact exists.
+      </p>
 
       <div
         role="tablist"
@@ -114,6 +117,40 @@ export default function Work() {
                   <p className="mt-6 pt-4 border-t border-line font-mono text-[11px] text-faint">
                     {p.stack.join(" · ")}
                   </p>
+                  {(p.repo || p.demo || p.video) && (
+                    <p className="mt-3 flex flex-wrap gap-x-4 gap-y-1 font-mono text-[11px] uppercase tracking-[0.1em]">
+                      {p.repo && (
+                        <a
+                          href={p.repo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`underline decoration-dotted underline-offset-4 hover:no-underline ${HUE_TEXT[DOMAIN_HUE[lead]]}`}
+                        >
+                          Repo
+                        </a>
+                      )}
+                      {p.demo && (
+                        <a
+                          href={p.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`underline decoration-dotted underline-offset-4 hover:no-underline ${HUE_TEXT[DOMAIN_HUE[lead]]}`}
+                        >
+                          Demo
+                        </a>
+                      )}
+                      {p.video && (
+                        <a
+                          href={p.video}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`underline decoration-dotted underline-offset-4 hover:no-underline ${HUE_TEXT[DOMAIN_HUE[lead]]}`}
+                        >
+                          Walkthrough
+                        </a>
+                      )}
+                    </p>
+                  )}
                 </motion.article>
               );
             })}

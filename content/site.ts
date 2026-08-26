@@ -25,8 +25,8 @@ export const personal = {
   linkedin: "https://www.linkedin.com/in/harishprabhup",
   github: "https://github.com/havzzzz",
   resumePath: "/resume.pdf",
-  eyebrow: "Singapore · Data & AI · Automation",
-  thesis: "I turn messy operations into automated, measurable systems.",
+  eyebrow: "Singapore · Solutions Delivery · Data & AI",
+  thesis: "I turn customers' messy operations into automated, measurable systems.",
   subline:
     "Analyst and builder across data, AI and automation. I have worked inside the operations I now automate: regulated casino finance, emergency hotlines, and a 50,000-interaction service floor.",
 };
@@ -35,7 +35,7 @@ export const about = {
   paragraphs: [
     "I am a Data Science & Artificial Intelligence undergraduate at NTU on a work-study degree, and since 2020 I have worked inside operations most analysts only ever see through a dashboard: a national emergency hotline, the cage floor of Marina Bay Sands, and the customer service engine room of FairPrice Group.",
     "That path shaped how I work. At Tele-Centre I handled 10,000+ emergency calls at 98% accuracy and ranked first in performance. At Marina Bay Sands I processed S$500,000+ a day in a GRA-regulated environment where 100% reconciliation was the only acceptable number. At FairPrice Group I became the primary analytics resource across four business units, building NLP pipelines, automated workflows and dashboards that cut manual triage by 40% and lifted first reply SLA from 75% to 98%.",
-    "The pattern in everything I build: find where an operation leaks time or accuracy, automate the fix, and put a number on the result. I am open to roles across data, AI, automation and product analytics.",
+    "The pattern in everything I build: find where an operation leaks time or accuracy, automate the fix, and put a number on the result. I am now aiming at solutions engineering and forward-deployed roles, where that same pattern runs inside a customer's operation instead of my own.",
   ],
   facts: [
     { label: "Base", value: "Singapore" },
@@ -45,8 +45,12 @@ export const about = {
     },
     { label: "Focus", value: "Data & AI · Automation · Product Analytics" },
     { label: "Toolkit core", value: "Python · SQL · BigQuery · BERT · UiPath" },
-    { label: "Certifications", value: "10, from Google, IBM, Microsoft, Duke, NTU and Jeppesen" },
-    { label: "Status", value: "Open to opportunities" },
+    { label: "Certifications", value: "10, from Google, IBM, Coursera, Duke, NTU and Jeppesen" },
+    {
+      label: "Availability",
+      value:
+        "Weekday, full-time, now through 2029. NTU-structured 12-month industry attachment, Aug 2028 - Aug 2029, convertible to full-time after graduation.",
+    },
   ],
 };
 
@@ -97,6 +101,9 @@ export type Project = {
   result: string;
   domains: Domain[];
   stack: string[];
+  repo?: string;
+  demo?: string;
+  video?: string;
 };
 
 export const projects: Project[] = [
@@ -169,7 +176,7 @@ export const projects: Project[] = [
     built:
       "Managed the UiPath RPA program end to end: requirements, delivery coordination and operational ROI frameworks, using LLM prompt engineering to evaluate chatbot automation impact on CX metrics.",
     result: "Defined the ROI measurement standard for the automation program.",
-    domains: ["automation", "product"],
+    domains: ["automation", "product", "engineering"],
     stack: ["UiPath", "LLM Prompt Engineering", "GenAI"],
   },
 ];
@@ -232,29 +239,6 @@ export type SkillGroup = { label: string; items: string[] };
 
 export const skillGroups: SkillGroup[] = [
   {
-    label: "Data & Analytics",
-    items: [
-      "SQL",
-      "BigQuery",
-      "Python (Pandas, NumPy, scikit-learn)",
-      "Tableau",
-      "Power BI",
-      "A/B Testing",
-      "Funnel Analysis",
-      "KPI Dashboard Design",
-    ],
-  },
-  {
-    label: "ML & NLP",
-    items: [
-      "BERT Models (BERTopic, Transformers)",
-      "NLP Text Classification",
-      "Feature Engineering",
-      "Real-time Data Processing",
-      "Data Pipelines & ETL",
-    ],
-  },
-  {
     label: "AI & LLM Engineering",
     items: [
       "Google Vertex AI",
@@ -265,6 +249,30 @@ export const skillGroups: SkillGroup[] = [
       "LlamaIndex",
       "Model Context Protocol (MCP)",
       "Ollama, vLLM, LM Studio (self-hosted inference)",
+    ],
+  },
+  {
+    label: "Automation & Platform",
+    items: [
+      "Google Apps Script",
+      "Zendesk API",
+      "UiPath RPA",
+      "Workflow Design",
+      "Apigee (API Gateway)",
+      "Docker",
+      "Git",
+      "CI/CD Pipelines",
+      "Terraform",
+    ],
+  },
+  {
+    label: "ML & NLP",
+    items: [
+      "BERT Models (BERTopic, Transformers)",
+      "NLP Text Classification",
+      "Feature Engineering",
+      "Real-time Data Processing",
+      "Data Pipelines & ETL",
     ],
   },
   {
@@ -280,17 +288,16 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
-    label: "Automation & Platform",
+    label: "Data & Analytics",
     items: [
-      "Google Apps Script",
-      "Zendesk API",
-      "UiPath RPA",
-      "Workflow Design",
-      "Apigee (API Gateway)",
-      "Docker",
-      "Git",
-      "CI/CD Pipelines",
-      "Terraform",
+      "SQL",
+      "BigQuery",
+      "Python (Pandas, NumPy, scikit-learn)",
+      "Tableau",
+      "Power BI",
+      "A/B Testing",
+      "Funnel Analysis",
+      "KPI Dashboard Design",
     ],
   },
   {
