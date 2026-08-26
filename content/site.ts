@@ -185,7 +185,7 @@ export type Role = {
 export const experience: Role[] = [
   {
     company: "FairPrice Group",
-    title: "Service Analytics, Project-In-Charge",
+    title: "Executive - Service Analytics (Customer Service)",
     dates: "Nov 2025 - May 2026",
     summary:
       "Primary analytics resource across all FairPrice Group business units: retail stores, ecommerce, food services and Link.",
@@ -198,7 +198,7 @@ export const experience: Role[] = [
   },
   {
     company: "Marina Bay Sands",
-    title: "Financial Operations Specialist",
+    title: "Cage Cashier (High-Value Transactions, AML/CDD)",
     dates: "Nov 2024 - Oct 2025",
     summary:
       "High-value financial operations in a GRA-regulated environment.",
@@ -210,7 +210,7 @@ export const experience: Role[] = [
   },
   {
     company: "Tele-Centre Services",
-    title: "Customer Care Data Analyst",
+    title: "Customer Care Officer (Data & Reporting)",
     dates: "Feb 2020 - Aug 2020",
     summary:
       "Emergency response operations for MOH Emergency and the 993 Ambulance Hotline.",
@@ -273,7 +273,7 @@ export const skillGroups: SkillGroup[] = [
       "Python, FastAPI",
       "React, Node.js",
       "TypeScript, JavaScript",
-      "Java, Spring Boot",
+      "Java (NTU project work)",
       "MongoDB",
       "REST APIs, OpenAPI",
       "Webhook Integrations",
@@ -312,7 +312,7 @@ export const certifications = [
   "Large Language Models · Google Cloud",
   "Data Science Methodology · IBM",
   "Certified Full Stack Developer · NTU",
-  "Azure Cloud Services · Microsoft",
+  "Azure Cloud Services · Coursera",
   "Data Science Math Skills · Duke",
   "Behavioral Finance · Duke",
   "Basic Aerospace Knowledge · Jeppesen",
