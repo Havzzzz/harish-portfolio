@@ -160,6 +160,18 @@ export const projects: Project[] = [
     stack: ["Microservices", "REST APIs", "Systems Integration", "Solution Design"],
   },
   {
+    title: "HawkerHero: Hawker Centre Discovery PWA",
+    problem:
+      "Singapore's hawker centre data is split across three separate government sources (NEA locations, NEA hygiene grades, IMDA Wireless@SG hotspots) with no shared interface to search, filter or review against. Built with a 4-person team for NTU's CT2004 Object-Oriented Programming module.",
+    built:
+      "As backend lead: a FastAPI service that aggregates and caches the NEA and IMDA datasets and serves them to a Svelte PWA frontend with GPS proximity search, hygiene/Wi-Fi filtering and Firebase-authenticated reviews.",
+    result:
+      "A working full-stack PWA integrating three live government data sources behind one map-based interface.",
+    domains: ["engineering", "data-ai"],
+    stack: ["FastAPI", "Python", "Svelte", "Firebase Auth", "NEA/IMDA APIs"],
+    repo: "https://github.com/dgmw15/MakanOS",
+  },
+  {
     title: "Personal Builds: Full-Stack & LLM",
     problem:
       "Production work sets the stack. Side projects are where I get to pick it, and where new tools get tried before they are anywhere near something that matters.",
