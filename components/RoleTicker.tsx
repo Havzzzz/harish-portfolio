@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from "react";
 
+// The first noun is the ROLE, not the technology. Solutions leads; the rest
+// are the shapes that role has actually taken, each backed by a truth bullet.
 const roles = [
-  "a Data & AI analyst",
+  "a solutions engineer",
+  "a delivery engineer",
+  "a systems integrator",
   "an automation builder",
-  "an NLP pipeline engineer",
-  "a product analyst",
-  "a systems thinker",
+  "the vendors' point of contact",
 ];
 
 const TYPE_MS = 55;

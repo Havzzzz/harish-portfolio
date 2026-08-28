@@ -6,7 +6,7 @@ export default function About() {
   return (
     <section id="about" className="relative mx-auto max-w-6xl px-6 pt-24 sm:pt-32">
       <div className="glow-violet left-[-140px] top-[60px] h-[360px] w-[360px]" />
-      <SectionHeader eyebrow="About" title="Operator turned builder." />
+      <SectionHeader eyebrow="About" title="Scope it, build it, prove it." />
 
       <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:gap-16">
         <Reveal>

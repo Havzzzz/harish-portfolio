@@ -23,10 +23,10 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Harish Prabhu · Solutions & Delivery Engineer",
+  title: `${personal.name} · ${personal.role}`,
   description: personal.thesis,
   openGraph: {
-    title: "Harish Prabhu",
+    title: `${personal.name} · ${personal.role}`,
     description: personal.thesis,
     type: "website",
   },
@@ -36,13 +36,17 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: personal.fullName,
+  jobTitle: personal.role,
   email: `mailto:${personal.email}`,
-  url: personal.linkedin,
+  url: SITE_URL,
+  sameAs: [personal.linkedin, personal.github],
   address: { "@type": "PostalAddress", addressLocality: "Singapore" },
   alumniOf: "Nanyang Technological University",
   knowsAbout: [
     "Solutions Engineering",
+    "Forward Deployed Engineering",
     "Technical Delivery",
+    "Implementation Consulting",
     "Systems Integration",
     "Workflow Automation",
     "Vendor Management",

@@ -7,9 +7,9 @@ import RoleTicker from "./RoleTicker";
 import NightTraffic from "./NightTraffic";
 
 const statusTokens = [
-  { label: "Analytics", cls: "text-magenta" },
-  { label: "Automation", cls: "text-cyan" },
-  { label: "Product", cls: "text-violet" },
+  { label: "Delivery", cls: "text-cyan" },
+  { label: "Automation", cls: "text-violet" },
+  { label: "Data & AI", cls: "text-magenta" },
 ];
 
 function rise(step: number): React.CSSProperties {
@@ -78,7 +78,7 @@ function Portrait() {
             <span className="text-cyan">SIN</span>
           </div>
           <div className="mt-1.5 flex items-center justify-between text-faint">
-            <span>Analyst · Builder</span>
+            <span>Solutions · Delivery</span>
             <span className="text-violet">Active</span>
           </div>
         </div>
