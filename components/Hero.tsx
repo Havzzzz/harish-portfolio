@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { personal, readouts } from "@/content/site";
 import Readout from "./Readout";
 import RoleTicker from "./RoleTicker";
@@ -16,8 +16,7 @@ function rise(step: number): React.CSSProperties {
   return { ["--rise-delay" as string]: `${step * 0.12}s` };
 }
 
-function Portrait() {
-  const [missing, setMissing] = useState(false);
+function IdentityPlate() {
   const tiltRef = useRef<HTMLDivElement>(null);
 
   const onMove = (e: React.MouseEvent) => {
@@ -52,23 +51,23 @@ function Portrait() {
         <span className="absolute -bottom-px -left-px z-10 h-4 w-4 border-b-2 border-l-2 border-cyan" />
         <span className="absolute -bottom-px -right-px z-10 h-4 w-4 border-b-2 border-r-2 border-cyan" />
 
-        <div className="h-[340px] sm:h-[390px] overflow-hidden">
-          {missing ? (
-            <div className="flex h-full flex-col items-center justify-center gap-3">
-              <span className="font-display text-6xl text-dim">HP</span>
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-faint">
-                portrait / profile.jpg
-              </span>
-            </div>
-          ) : (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src="/profile.jpg"
-              alt={`Portrait of ${personal.name}`}
-              className="h-full w-full object-cover object-top"
-              onError={() => setMissing(true)}
-            />
-          )}
+        {/* Identity plate. Deliberately typographic: no portrait on this site. */}
+        <div className="hero-grid relative flex h-[300px] sm:h-[340px] flex-col items-center justify-center gap-6 overflow-hidden">
+          <span className="font-display text-[5.5rem] sm:text-[6.5rem] leading-none grad-text">
+            HP
+          </span>
+          <div className="flex w-full flex-col gap-2 px-6 font-mono text-[10px] uppercase tracking-[0.16em]">
+            {[
+              ["Role", "Solutions & Delivery"],
+              ["Base", "Singapore"],
+              ["Studying", "Computing, AI"],
+            ].map(([k, v]) => (
+              <div key={k} className="flex items-baseline justify-between gap-3 border-b border-line/70 pb-1.5">
+                <span className="text-faint">{k}</span>
+                <span className="text-dim">{v}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* crew badge data plate */}
@@ -175,7 +174,7 @@ export default function Hero() {
           </div>
 
           <div className="justify-self-center lg:justify-self-end lg:pr-4">
-            <Portrait />
+            <IdentityPlate />
           </div>
         </div>
       </div>

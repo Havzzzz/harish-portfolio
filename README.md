@@ -35,7 +35,10 @@ Non-negotiables carried over from the resume system:
 
 ## Assets
 
-- `public/profile.jpg` : headshot (4:5 crop looks best; site shows a placeholder until present)
+No portrait is used on this site, by choice. The hero renders a typographic identity
+plate instead, and `public/profile.jpg` was removed from the working tree and purged from
+git history on 2026-08-28. Do not reintroduce a photo without asking.
+
 - `public/resume.pdf` : **copied from** `jobs/_general_ai_engineering/output/resume.pdf` in the
   resume-modifier repo. Re-copy it whenever that resume is re-rendered, or the site serves a
   stale PDF. It has drifted before.
